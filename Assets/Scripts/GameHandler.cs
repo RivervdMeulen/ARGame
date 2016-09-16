@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class SceneLoader : MonoBehaviour {
+public class GameHandler : MonoBehaviour, IEvents {
     
     public void loadNewScene(string scene)
     {
@@ -16,5 +17,17 @@ public class SceneLoader : MonoBehaviour {
 	public void quitGame()
 	{
 		Application.Quit ();
+	}
+
+	public void EndMatch () {
+		SceneManager.LoadScene (0, LoadSceneMode.Single);
+	}
+
+	public void ValueChange (float amount) {
+
+	}
+
+	public void TakeAction (bool playerTurn, bool defend) {
+
 	}
 }
